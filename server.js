@@ -1,5 +1,5 @@
-const express = require('express') // express = express
-const app = express() // app = express()
+const express = require('express')
+const app = express()
 
 const fs = require('fs')
 const options = {
@@ -7,8 +7,8 @@ const options = {
     cert: fs.readFileSync(__dirname + '/ssl/nginx.crt')
 };
 
-const server = require('https').Server(options, app) // server = https.Server(express())
-const io = require('socket.io')(server) // io = socket.io(https.Server(express()))
+const server = require('https').Server(options, app)
+const io = require('socket.io')(server)
 const { v4:uuidV4 } = require('uuid')
 
 app.set('view engine', 'ejs')
@@ -24,12 +24,13 @@ app.get('/:room', (req, res) => {
 
 io.on('connection', socket => {
     socket.on('join-room', (roomId, userId) => {
-        console.log(roomId, userId)
+        console.log(roomId + ' <=== ' + userId)
         socket.join(roomId)
         socket.broadcast.to(roomId).emit('user-connected', userId)
 
         socket.on('disconnect', () => {
             socket.broadcast.to(roomId).emit('user-disconnected', userId)
+            socket.disconnect();
         })
     })
 })
