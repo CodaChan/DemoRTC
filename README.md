@@ -7,7 +7,7 @@ An P2P online video meeting WebRTC Demo that can be deployed on your server.
 
 ## Live Example
 
-Here's an [Example](https://sh.coda.wiki:5001) application that you can join the same room and talk together with your friends!
+Here's an [Example](https://sh.coda.wiki:5002) application that you can join the same room and talk together with your friends!
 
 **Requirement**
 
@@ -18,13 +18,13 @@ A computer with Chrome, good internet and, of course, some friends...
 Just enter the example application directly, and you will get a random `roomId` , then your `URL` is looks like:
 
 ```html
-https://sh.coda.wiki:5001/<yourRandomRoomId>
+https://sh.coda.wiki:5002/<yourRandomRoomId>
 ```
 
 Or you can choose your favorite `roomId` , and attach it behind default `URL` :
 
 ```html
-https://sh.coda.wiki:5001/<yourFavoriteRoomId>
+https://sh.coda.wiki:5002/<yourFavoriteRoomId>
 ```
 
 **Invite**
@@ -41,7 +41,7 @@ Remember to tell them opening this on Chrome and allowing Camera & Microphone ac
 
 Fist of all, make sure that latest NodeJS was already installed on your linux server(tested on Ubuntu Server 20.04), then download this project, and use `cd` command make you stay on the project folder, and do following operating.
 
-This project will use Port 5001(RTC Server) and Port 5002(PeerJS Server), make sure they are open on your server, or you can change the code, make it use the port which you want.
+This project will use Port 5002(RTC Server) and Port 5001(PeerJS Server), make sure they are open on your server, or you can change the code, make it use the port which you want.
 
 And you should have a Domain and SSL certificate for it.
 
@@ -95,15 +95,20 @@ uuid == 8.3.2
    screen -S rtcServer node server.js
    ```
 
-6. If the DNS resolution of your Domain is your server IP, just visit `https://<yourDomain>:<yourPort(default is 5001)>/` to enjoy the DemoRTC!
+6. If the DNS resolution of your Domain is your server IP, just visit `https://<yourDomain>:<yourPort(default is 5002)>/` to enjoy the DemoRTC!
 
 
+## Update
+
+### v0.0.1
+
+- Support devices without Camera.
+- Add 'play' button for devices without Camera, because of [policies](https://developers.google.com/interactive-media-ads/docs/sdks/html5/client-side/autoplay).
 
 ## TODO List
 
 - Optimized code structure
 - Deployment Docker Containerized
-
 
 
 ## Thanks

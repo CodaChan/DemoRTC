@@ -2,7 +2,7 @@ const fs = require('fs');
 const { PeerServer } = require('peer');
 
 const peerServer = PeerServer({
-  port: 5002,
+  port: 5001,
   path: '/',
   ssl: {
     key: fs.readFileSync(__dirname + '/ssl/nginx.key'),
