@@ -1,7 +1,7 @@
 # DemoRTC
 An P2P online video meeting WebRTC Demo that can be deployed on your server.
 
-![Screen Shot 2022-03-05 at 13.33.26](/Users/coda/Documents/Readme/Readme.png)
+![Screen Shot 2022-03-05 at 13.33.26](README.png)
 
 
 
